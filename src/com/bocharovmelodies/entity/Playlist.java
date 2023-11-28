@@ -16,31 +16,37 @@ public class Playlist {
     }
 
     public boolean addSong(Song song){
-        if (songs.contains(song)){
+        if (findSong(song)){
             System.out.println("This song has already been exist in the playlist");
             return false;
         }
         return songs.add(song);
     }
 
-    public Song findSong(){
-        return null;
-    }
-
-    public void updateSong(){
+    public void updateSong(Song song){
 
     }
 
     public boolean deleteSong(){
-        return true;
+        return false;
     }
 
-
+    public boolean findSong(Song actualSong){
+        for (Song song: songs){
+            if (actualSong.equals(song)){
+                return true;
+            }
+        }
+        return false;
+    }
 
     @Override
     public String toString() {
-        return "Playlist{" +
-                "songs=" + songs +
-                '}';
+        String string = name + "\n=================\n";
+        for (Song song: songs){
+            string += song + "\n";
+        }
+        string += "=================";
+        return string;
     }
 }
