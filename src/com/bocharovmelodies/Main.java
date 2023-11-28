@@ -16,11 +16,10 @@ public class Main {
         Playlist playlist = new Playlist("myPlaylist");
         for (int i = 0; i < 5; i++){
             Song song = new Song(String.valueOf(i), i * 35);
+            System.out.println(song.hashCode());
+            playlist.addSong(song);
             playlist.addSong(song);
         }
-
         System.out.println(playlist);
-
-
     }
 }

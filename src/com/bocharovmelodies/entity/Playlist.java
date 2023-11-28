@@ -5,12 +5,14 @@ import java.util.List;
 
 public class Playlist {
 
-        private static int playlistId;
+        private static int generatingId = 0;
+
+        private int playlistId;
         private String name;
         private List<Song> songs;
 
     public Playlist(String name) {
-        playlistId++;
+        this.playlistId = ++generatingId;
         this.name = name;
         this.songs = new ArrayList<>();
     }

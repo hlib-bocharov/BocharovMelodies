@@ -21,7 +21,7 @@ public class Song {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Song song = (Song) o;
-        return songId == song.songId && Objects.equals(name, song.name);
+        return songId == song.songId;
     }
 
     @Override
@@ -42,5 +42,17 @@ public class Song {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 }
