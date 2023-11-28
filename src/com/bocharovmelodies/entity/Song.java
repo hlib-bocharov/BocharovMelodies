@@ -7,7 +7,7 @@ public class Song {
     private static int generateId = 0;
 
     private int songId;
-    private  String name;
+    private String name;
     private int duration;
 
     public Song(String name, int duration) {
