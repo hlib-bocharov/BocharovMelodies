@@ -6,11 +6,14 @@ public class Song {
 
     private static int generateId = 0;
 
-    private int songId;
+    private final int songId;
     private String name;
     private int duration;
 
     public Song(String name, int duration) {
+        if (name.isBlank() || duration < 1){
+            throw new IllegalArgumentException();
+        }
         songId = ++generateId;
         this.name = name;
         this.duration = duration;
